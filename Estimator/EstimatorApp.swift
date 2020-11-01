@@ -11,7 +11,7 @@ import SwiftUI
 struct EstimatorApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(valoreDiMercato: StartValue())
         }
     }
 }
