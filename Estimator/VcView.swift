@@ -13,6 +13,7 @@ struct VcView: View {
     @ObservedObject var valoreDiMercato: StartValue
     
     
+    
     //properties per gli elementi edilizi
   /*  @State private var structValue: Double = 0
     @State private var roofValue: Double = 0
@@ -73,6 +74,7 @@ struct VcView: View {
   
     
     var body: some View {
+        
         
         VStack {
             Text("Seleziona il livello qualitativo dei componenti edilizi: otterrai automaticamente i coefficienti migliorativi o peggiorativi e il valore di conservazione finale").foregroundColor(.gray)
