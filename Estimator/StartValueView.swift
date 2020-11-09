@@ -71,7 +71,7 @@ struct StartValueView: View {
             }.padding()
             
           
-            NavigationLink("Avanti", destination: VcView(valoreDiMercato: StartValue()))
+            NavigationLink("Avanti", destination: VcView(valorePartenza: valoreDiMercato.calcFinal(), valoreDiMercato: StartValue()))
                 .padding()
                 .font(.title2)
                 .foregroundColor(.blue)

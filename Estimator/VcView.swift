@@ -9,6 +9,7 @@ import SwiftUI
 
 struct VcView: View {
     
+    var valorePartenza: Double
     //Source of Truth
     @ObservedObject var valoreDiMercato: StartValue
     
@@ -75,7 +76,7 @@ struct VcView: View {
         
      
             VStack {
-            Text("Seleziona il livello qualitativo dei componenti edilizi: otterrai automaticamente i coefficienti migliorativi o peggiorativi e il valore di conservazione finale").foregroundColor(.gray)
+            Text("Analizza la qualità dei componenti edilizi: otterrai automaticamente i coefficienti migliorativi o peggiorativi e il valore di conservazione finale").foregroundColor(.gray)
             
             Spacer()
             
@@ -93,7 +94,7 @@ struct VcView: View {
                       HStack {
                           Text("Il valore di incremento è:").foregroundColor(.gray)
                           Spacer()
-                        Text("\(valoreDiMercato.calcStruct(), specifier: "%g")").bold()
+                        Text("\(valoreDiMercato.calcStruct(valorediPartenza: valorePartenza), specifier: "%g")").bold()
                       }
                       
                 }
@@ -197,7 +198,7 @@ struct VcView: View {
             HStack {
                 Text("Il valore VC è:")
                 Spacer()
-                Text("€ \(valoreDiMercato.calcStruct())").bold()
+                Text("€ \(valoreDiMercato.calcStruct(valorediPartenza: valorePartenza))").bold()
             }.padding()
             
             NavigationLink("Avanti", destination: TownView())
@@ -212,6 +213,6 @@ struct VcView: View {
 
 struct VcView_Previews: PreviewProvider {
     static var previews: some View {
-        VcView(valoreDiMercato: StartValue())
+        VcView(valorePartenza: 0.00, valoreDiMercato: StartValue())
     }
 }

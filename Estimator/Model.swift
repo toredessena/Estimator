@@ -60,7 +60,7 @@ class StartValue: ObservableObject {
     @Published var factorStruct: Double = 0.25
     
     // funzioni per il calcolo finale  VcView
-    func calcStruct() -> Double {
+    func calcStruct(valorediPartenza: Double) -> Double {
         let calc1 = factorStruct * structValue * calcFinal()
              return calc1
     }
